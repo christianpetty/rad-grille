@@ -1,0 +1,78 @@
+body {
+  max-width: 400px;
+}
+
+small {
+  font-size: 0.75em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 50% 75px;
+  grid-gap: 3px;
+} 
+
+#plot {
+  margin-bottom: 10px;    
+}
+
+input[type=number] {
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #131313;
+}
+
+input[type=submit] {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #131313;
+}
+
+label {
+  text-align: right;
+}
+
+label:after {
+  content: ":";
+}
+
+.alert {
+  color: orangered;
+}
+
+#dataTable {
+  width: 30%;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+#holeTable {
+  width: 30%;
+  margin: auto;
+}
+
+table th {
+  background-color: honeydew;
+  border: 1px solid black;
+  font-weight: bold;
+  padding: 5px;
+}
+
+#holeTable tr:hover {
+  background-color: honeydew;
+}
+
+textarea {
+  display: block;
+  margin: auto;
+  margin-top: 5px;
+  width: auto;
+  height: 200px;
+}

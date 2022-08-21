@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+<title>Grille Generator</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.rad.cm/reset.css">
+<link rel="stylesheet" href="https://www.radianrad.com/style.css">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body onload="regenerate();">
+
+<p>Input desired perforation diameter and maximum outer diameter in the same units. 
+Calculations are dimensionless. The graphic is to scale.</p><br>
+
+<form id="inputsForm" oninput="validateInputs();">
+  <div class="grid">
+      
+  <label for="holeDiameter">&#216; Holes [units]</label>
+  <input type="number" id="holeDiameter" name="holeDiameter"
+         value="3" min="0.001" step="0.001" required>
+      
+  <label for="outerDiameter">&#216; Outer [units]</label>
+  <input type="number" id="outerDiameter" name="outerDiameter"
+         value="100" min="0.001" step="0.001" required>
+      
+  <label for="outerDiameter">Initial Phase [&#176;]</label>
+  <input type="number" id="initialPhase" name="initialPhase"
+         value="-90" min="-180" max="180" step="0.001" required>
+      
+  <label for="outerDiameter">Per Ring Phase Shift [&#176;]</label>
+  <input type="number" id="phaseShift" name="phaseShift" value="0"
+         min="-180" max="180" step="0.001" required>
+      
+  <label for="colorPhaseShift">Display Phase Shift</label>
+  <input type="checkbox" id="colorPhaseShift" name="colorPhaseShift">
+  </div>
+    
+  <input type="submit" id="submit" name="submit" value="Generate">
+</form>
+
+<canvas id="plot" width="300" height="300"><span class="alert">Javascript is required to use this tool.</span></canvas>
+
+<table class="center" id="dataTable">
+  <tr>
+    <th>No. of Holes</th>
+    <th>Open Area [units^2]</th>
+    <th>Open Area [%]</th>
+  </tr>
+  <tr>
+    <td id="totalHoles"></td>
+    <td id="openAreaU2"></td>
+    <td id="openAreaP"></td>
+  </tr>
+</table>
+  
+<button onclick="copy2Clipboard();">Copy to Clipboard (x &#60;TAB&#62; y)</button>
+  
+<textarea id="textCoords"></textarea>
+
+<script type='text/javascript' src="grille-generator.js"></script>
+
+</body>
+
+</html>
